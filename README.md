@@ -25,11 +25,11 @@ Produzir formulários reativos utilizando forms - Aula 3 (1hr)
     - Criar um formulário utilizando FormGroup e FormControl ✅
 	- Utilizar FormBuilder para simplificar a criação de formulário ✅
 	- Implementar validações (Validators.required,Validators.minLength...) ✅
-	- EXTRA: Exibir mensagem de erro de validação ⚠️
+	- EXTRA: Exibir mensagem de erro de validação ✅
 
 Utilizar o conceito de SPA (single page application) - Aula 3 (2hrs)
     - Definir rotas para diferentes componentes (app.routes.ts) ✅
-	- Utilizar a diretiva router-outlet para criação de paginas filhas (childs) ✅
+	- Utilizar a diretiva router-outlet para criação de paginas filhas (childs) ✅ implementado, nao usado
 	- Criar links de navegação entre paginas (routerLink) ✅ feito c router, nao routerLink
 
 Compreender funcionamento de componentes 'standalone'  - Aula 3 (1hr)

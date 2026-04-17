@@ -7,16 +7,20 @@
 
     <label>Password</label>
     <input type="password" formControlName="password" placeholder="Type your password here..." />
-
+    
     <label>Name</label>
     <input type="text" formControlName="name" placeholder="Type your name here..." />
-
+    
     <label>Birth Date</label>
     <input type="text" formControlName="birthdate" placeholder="Type your birth date here..." />
-
+    
     <label>Phone</label>
     <input type="text" formControlName="phone" placeholder="Type your phone here..." />
-
+    
     <button type="submit">Save</button>
+    
+    @if(!Password || !Email || !Name || !Birthdate || !Phone) {
+      <p>All fields must be filled.</p>
+    }
   </form>
 </div>

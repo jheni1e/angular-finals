@@ -58,7 +58,7 @@ export class Subscribe {
 
   subscribe() {
     if (!this.subscribeForm.valid) {
-      alert('Alguns campos estão inválidos.');
+      alert('Some fields are invalid.');
       return;
     }
 
@@ -72,12 +72,12 @@ export class Subscribe {
 
     this.authApi.subscribe(data).subscribe({
       next: () => {
-        alert('Cadastro realizado com sucesso!');
+        alert('Registered successfully!');
         this.router.navigate(['/login']);
       },
       error: (err) => {
-        console.error('Cadastro falhou.', err);
-        alert('Cadastro falhou: ' + (err.error?.message || 'Unknown error'));
+        console.error('Register failed.', err);
+        alert('Registered failed: ' + (err.error?.message || 'Unknown error'));
       }
     });
   }
