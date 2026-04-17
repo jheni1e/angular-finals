@@ -5,6 +5,7 @@ import { IUser } from '../../models/User';
 
 @Component({
   selector: 'app-subscribe',
+  standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './subscribe.html',
   styleUrl: './subscribe.css',

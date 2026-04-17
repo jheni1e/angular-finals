@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-contact-button',
+  standalone: true,
   imports: [],
   templateUrl: './contact-button.html',
   styleUrl: './contact-button.css',

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-contact-card',
+  standalone: true,
   imports: [],
   templateUrl: './contact-card.html',
   styleUrl: './contact-card.css',

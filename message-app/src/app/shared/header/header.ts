@@ -4,6 +4,7 @@ import { Button } from '../button/button';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   imports: [Button],
   templateUrl: './header.html',
   styleUrl: './header.css',

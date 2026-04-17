@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-contacts-list',
+  standalone: true,
   imports: [],
   templateUrl: './contacts-list.html',
   styleUrl: './contacts-list.css',
