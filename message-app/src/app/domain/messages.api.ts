@@ -20,15 +20,13 @@ export class MessagesApi extends Api {
     return this.client.get<IMessage[]>(`${this.URL}/messages`).pipe();
   }
 
-  getMessagesByChat = (): Observable<IMessage[]> => {
+  getMessagesByChat = (contatoId: string): Observable<IMessage[]> => {
     const token = sessionStorage.getItem('token');
 
     const headers = {
       'Authorization': `${token}`
     };
 
-    const contatoId = ''; // pegar id do contato
-    
     return this.client.get<IMessage[]>(`${this.URL}/messages/${contatoId}`).pipe();
   }
 

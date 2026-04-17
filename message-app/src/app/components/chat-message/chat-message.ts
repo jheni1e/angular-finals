@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chat-message',
@@ -12,4 +12,10 @@ export class ChatMessage {
   // enviou a mensagem (se foi voce ou o contato).
   // Lembrando que o mesmo componente deverá ser utilizado para ambos os usuários do chat, entao você terá que ter alguma catacterística que diferencie-os.
   // Neste componente você terá liberdade para definir quais bindings será necessárias
+
+  @Input()
+  message: string = "mensagem teste"
+
+  @Input()
+  contact: string = "Malu";
 }

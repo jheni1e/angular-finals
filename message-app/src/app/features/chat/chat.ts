@@ -1,13 +1,14 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, Input, OnInit, signal } from '@angular/core';
 import { IMessage } from '../../models/Message';
 import { Subscription } from 'rxjs';
 import { MessagesApi } from '../../domain/messages.api';
 import { ActivatedRoute } from '@angular/router';
+import { ChatMessage } from '../../components/chat-message/chat-message';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [],
+  imports: [ChatMessage],
   templateUrl: './chat.html',
   styleUrl: './chat.css',
 })
@@ -20,17 +21,20 @@ export class Chat implements OnInit {
 
   constructor(private messageApi: MessagesApi, private router: ActivatedRoute) { }
 
-  private idContato: string = '';
+  @Input() idContato: string = '';
   protected messages = signal<IMessage[]>([]);
   private messageSubscription!: Subscription;
 
   ngOnInit(): void {
-    this.messageSubscription = this.messageApi.messageObservable.subscribe(res => {
-      // ?
-    });
-  }
+    this.router.paramMap.forEach(param => {
+      this.idContato = param.get("id") ?? "";
+    })
 
-  ngOnDestroy(): void {
-    this.messageSubscription.unsubscribe();
+    this.messageApi.getMessagesByChat(this.idContato).subscribe(
+      res => {
+        console.log(res)
+      });
+
+    
   }
 }
