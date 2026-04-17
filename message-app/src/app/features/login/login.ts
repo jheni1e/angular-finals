@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ILogin } from '../../models/User';
+import { AuthApi } from '../../domain/auth.api';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class Login {
   @Output()
   dataChange: EventEmitter<string> = new EventEmitter();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authApi: AuthApi) { }
 
   loginForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required]),
@@ -43,11 +44,10 @@ export class Login {
       password: this.Password?.value
     }
 
-    // this.authApi.login(data).subscribe(
-    //   res => {
-    //     sessionStorage.setItem('token', res);
-    //     sessionStorage.setItem('username', data.username);
-    //     this.router.navigate(['/']);
-    //   });
+    this.authApi.login(data).subscribe(
+      res => {
+        sessionStorage.setItem('token', res);
+        this.router.navigate(['/']);
+      });
   }
 }

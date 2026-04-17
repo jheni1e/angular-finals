@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IUser } from '../../models/User';
+import { AuthApi } from '../../domain/auth.api';
 
 @Component({
   selector: 'app-subscribe',
@@ -25,9 +26,9 @@ export class Subscribe {
   @Output()
   dataChange: EventEmitter<string> = new EventEmitter();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authApi: AuthApi) { }
 
-  subscribeForm : FormGroup = new FormGroup({
+  subscribeForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     name: new FormControl('', [Validators.required]),
@@ -51,7 +52,7 @@ export class Subscribe {
     return this.subscribeForm.get("birthdate")
   }
 
-  get Phone () {
+  get Phone() {
     return this.subscribeForm.get("phone")
   }
 
@@ -69,15 +70,15 @@ export class Subscribe {
       senha: this.Password?.value
     }
 
-    // this.authApi.subscribe(data).subscribe({
-    //   next: () => {
-    //     alert('Cadastro realizado com sucesso!');
-    //     this.router.navigate(['/login']);
-    //   },
-    //   error: (err) => {
-    //     console.error('Cadastro falhou.', err);
-    //     alert('Cadastro falhou: ' + (err.error?.message || 'Unknown error'));
-    //   }
-    // });
+    this.authApi.subscribe(data).subscribe({
+      next: () => {
+        alert('Cadastro realizado com sucesso!');
+        this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        console.error('Cadastro falhou.', err);
+        alert('Cadastro falhou: ' + (err.error?.message || 'Unknown error'));
+      }
+    });
   }
 }
