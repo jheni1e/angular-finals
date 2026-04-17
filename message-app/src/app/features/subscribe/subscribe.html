@@ -1,1 +1,22 @@
-<p>subscribe works!</p>
+<div class="container">
+  <form action="get" [formGroup]="subscribeForm" (ngSubmit)="subscribe()" class="card">
+    <h1>Register</h1>
+
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="Type your email here..." />
+
+    <label>Password</label>
+    <input type="password" formControlName="password" placeholder="Type your password here..." />
+
+    <label>Name</label>
+    <input type="text" formControlName="name" placeholder="Type your name here..." />
+
+    <label>Birth Date</label>
+    <input type="text" formControlName="birthdate" placeholder="Type your birth date here..." />
+
+    <label>Phone</label>
+    <input type="text" formControlName="phone" placeholder="Type your phone here..." />
+
+    <button type="submit">Save</button>
+  </form>
+</div>

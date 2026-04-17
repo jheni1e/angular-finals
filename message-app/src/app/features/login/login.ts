@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ILogin } from '../../models/User';
@@ -13,15 +13,18 @@ export class Login {
   // O login deverá ter um formulário que permite o usuário fazer login via email e senha e é importante que seja validado os campos tanto de email quanto o de senha. o
   // token de retorno deverá ser armazenado por sessão.
 
+  @Output()
+  dataChange: EventEmitter<string> = new EventEmitter();
+
   constructor(private router: Router) {}
 
   loginForm: FormGroup = new FormGroup({
-    username: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required])
   })
 
-  get Username() {
-    return this.loginForm.get("username")
+  get Email() {
+    return this.loginForm.get("email")
   }
 
   get Password() {
@@ -35,7 +38,7 @@ export class Login {
     }
 
     const data: ILogin = {
-      username: this.Username?.value,
+      email: this.Email?.value,
       password: this.Password?.value
     }
 
