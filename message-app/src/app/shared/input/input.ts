@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [NgModel],
+  imports: [],
   templateUrl: './input.html',
   styleUrl: './input.css',
 })
