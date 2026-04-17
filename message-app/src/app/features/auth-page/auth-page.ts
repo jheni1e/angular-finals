@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Header } from '../../shared/header/header';
 
 @Component({
   selector: 'app-auth-page',
-  imports: [],
+  imports: [Header],
   templateUrl: './auth-page.html',
   styleUrl: './auth-page.css',
 })
