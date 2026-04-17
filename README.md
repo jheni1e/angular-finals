@@ -19,7 +19,7 @@ Elaborar componentes (templates e bindings) - Aula 1 e 2 (6 hrs)
 	- Aplicar Property Binding para enviar dados ao componente ✅
 	- Aplicar Event Binding para reagir/receber dados do componente ✅
 	- Aplicar two-way Binding (ngModel) para sincronização do componente ⚠️
-	- Aplicar elementos de condições no template (@if, @for) ⚠️
+	- Aplicar elementos de condições no template (@if, @for) ✅
 
 Produzir formulários reativos utilizando forms - Aula 3 (1hr)
     - Criar um formulário utilizando FormGroup e FormControl ✅
@@ -30,15 +30,15 @@ Produzir formulários reativos utilizando forms - Aula 3 (1hr)
 Utilizar o conceito de SPA (single page application) - Aula 3 (2hrs)
     - Definir rotas para diferentes componentes (app.routes.ts) ✅
 	- Utilizar a diretiva router-outlet para criação de paginas filhas (childs) ✅
-	- Criar links de navegação entre paginas (routerLink) ⚠️
+	- Criar links de navegação entre paginas (routerLink) ✅ feito c router, nao routerLink
 
 Compreender funcionamento de componentes 'standalone'  - Aula 3 (1hr)
     - utilizar a propriedade standalone = true em componentes. ✅
 	- Importar componentes, diretivas ou pipes diretamente no array 'imports' do componente ✅
-	- Configurar Rotas utilizando componente standalone por meio de 'loadComponent' ⚠️
+	- Configurar Rotas utilizando componente standalone por meio de 'loadComponent' ✅
 
 Aplicar ferramentas de otimização de renderização reativa (signals) - Aula 4 (4 hrs)
-	- Criar um signal para armazenamento de estado reativo ⚠️
+	- Criar um signal para armazenamento de estado reativo ✅
 	- Modificar o valor de signal utilizando .set ⚠️
 	- Modificar o valor de signal utilizando .update ⚠️
 	- Criar um Computed signal para monitoramento ⚠️
