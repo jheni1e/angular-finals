@@ -34,7 +34,5 @@ export class Chat implements OnInit {
       res => {
         console.log(res)
       });
-
-    
   }
 }

@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Api } from './api';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { IContact } from '../models/Contact';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContactsApi extends Api {
+  private _contactsSubject = new Subject<IContact[]>();
+  public contactsObservable: Observable<IContact[]> = this._contactsSubject.asObservable();
+
   getAllContacts = (): Observable<IContact[]> => {
     const token = sessionStorage.getItem('token');
 
