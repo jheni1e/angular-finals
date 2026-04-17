@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-contact-button',
@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class ContactButton {
   // Este componente será o componente que ficará visivel na lista de contatos.
+
+  @Input() name = "Maluzinha";
 }
