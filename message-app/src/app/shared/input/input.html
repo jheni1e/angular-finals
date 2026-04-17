@@ -1,1 +1,7 @@
-<p>input works!</p>
+<div>
+  <h1>{{ value }}</h1>
+  <label>
+    Digite algo!
+    <input type="text" [placeholder]="placeholder" (input)="onChange($event)" />
+  </label>
+</div>
