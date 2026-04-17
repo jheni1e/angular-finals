@@ -1,7 +1,6 @@
 <div>
-  <h1>{{ value }}</h1>
   <label>
     Digite algo!
-    <input type="text" [placeholder]="placeholder" (input)="onChange($event)" />
+    <input type="text" [placeholder]="placeholder" #text="ngModel" />
   </label>
 </div>
