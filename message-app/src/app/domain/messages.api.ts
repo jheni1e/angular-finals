@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Api } from './api';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { IMessage } from '../models/Message';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MessagesApi extends Api {
+  private _messageSubject = new Subject<IMessage[]>();
+  public messageObservable: Observable<IMessage[]> = this._messageSubject.asObservable();
+
   getAllMessages = (): Observable<IMessage[]> => {
     const token = sessionStorage.getItem('token');
 
